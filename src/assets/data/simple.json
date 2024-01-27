@@ -1,0 +1,166 @@
+{
+    "data": [
+        {   
+            "user": {
+                "userId": 33,
+                "title": "Ing.",
+                "firstName": "Martina",
+                "lastName": "Veselá",
+                "fullName": "Martina Veselá",
+                "photo": "/images/gallery/user/rastislav.hrompa@interway.sk.png",
+                "email": "rastislav.hrompa@interway.sk"
+                },
+            "department": "Produktové oddelenie",
+            "status": "approved",
+            "term": "24. 5. 2023 13:00 - 25. 5. 2023 13:00"
+        },{
+            "user": {
+                "userId": 33,
+                "title": "Ing.",
+                "firstName": "Martina",
+                "lastName": "Veselá",
+                "fullName": "Martina Veselá",
+                "photo": "/images/gallery/user/rastislav.hrompa@interway.sk.png",
+                "email": "rastislav.hrompa@interway.sk"
+                },
+            "department": "Produktové oddelenie",
+            "status": "approved",
+            "term": "24. 5. 2023 13:00 - 25. 5. 2023 13:00"
+        },
+        {
+            "user": {
+                "userId": 34,
+                "title": "Ing.",
+                "firstName": "Patrik",
+                "lastName": "Knosko",
+                "fullName": "Patrik Knosko",
+                "photo": "/images/gallery/user/rastislav.hrompa@interway.sk.png",
+                "email": "rastislav.hrompa@interway.sk"
+                },
+            "department": "Oddelenie ľudských zdrojov",
+            "status": "pending",
+            "term": "24. 5. 2023 13:00 - 25. 5. 2023 13:00"
+        }
+    ],
+    "lastPage": 1,
+    "totalItems": 6,
+    "columns": [
+        {
+            "field": "_actions_",
+            "formatter": "wj-actions-modal",
+            "width": 40,
+            "maxWidth": 40,
+            "filterable": false,
+            "headerSort": false,
+            "resizable": false,
+            "formatterParams": [
+                {
+                    "dataAttr": "data-task-state",
+                    "condition": null,
+                    "icon": "fa-light fa-rotate-right",
+                    "action": "wj-dropdown-click-event",
+                    "attributes": "",
+                    "attrValue": "CLOSED",
+                    "text": "",
+                    "type": "EDIT",
+                    "title": "Resetovať stav",
+                    "url": "",
+                    "clickAction": "educationUpdateTaskState"
+                },
+                {
+                    "dataAttr": "data-task-state",
+                    "condition": null,
+                    "icon": "fa-light fa-envelope",
+                    "action": "wj-dropdown-click-event",
+                    "attributes": "",
+                    "attrValue": "CLOSED",
+                    "text": "",
+                    "type": "EDIT",
+                    "title": "Poslať pozvánku",
+                    "url": "",
+                    "clickAction": "educationUpdateTaskState"
+                },
+                {
+                    "dataAttr": "data-task-state",
+                    "condition": null,
+                    "icon": "fa-light fa-user-group",
+                    "action": "wj-modal-delete",
+                    "attributes": "",
+                    "attrValue": "ASSIGNED",
+                    "text": "Skutočne si prajete zrušiť pozvanie?",
+                    "type": "DELETE",
+                    "title": "Zrušiť pozvánku",
+                    "url": "",
+                    "clickAction": "educationUpdateTaskState"
+                }
+            ]
+        },
+        {
+            "title": "Meno",
+            "field": "user",
+            "filterField": "user.fullName",
+            "sortField": "user.firstName",
+            "formatter": "wj-profile-photo",
+            "formatterParams": {
+                "size": "sm",
+                "name": "{fullName}",
+                "printField": "fullName"
+            },
+            "filterable": true,
+            "resizable": true,
+            "headerSort": false,
+            "vertAlign": "middle",
+            "headerFilterFuncParams": {
+                "type": "string"
+            },
+            "hozAlign": "left",
+            "formatterPrint": "printFormatter",
+            "headerHozAlign": "left"
+        },
+		{
+            "title": "Oddelenie",
+            "field": "department",
+            "filterField": "department",
+            "filterable": false,
+            "resizable": true,
+            "vertAlign": "middle",
+            "hozAlign": "left",
+            "headerSort": false,
+            "formatterPrint": "printFormatter",
+            "headerHozAlign": "left"
+        },
+        {
+            "title": "Termín školenia",
+            "field": "term",
+            "filterField": "term",
+            "filterable": false,
+            "resizable": true,
+            "vertAlign": "middle",
+            "hozAlign": "left",
+            "headerSort": false,
+            "formatterPrint": "printFormatter",
+            "headerHozAlign": "left"
+        },
+        {
+            "title": "dddrrr",
+            "field": "invited",
+            "filterField": "invited",
+            "sortField": "invited",
+            "formatterParams": {
+                "photo-size": "sm",
+                "show-count": "1",
+                "printField": ""
+            },
+            "resizable": "header",
+            "filterable": false,
+            "hozAlign": "left",
+            "vertAlign": "middle",
+            "headerHozAlign": "left",
+            "formatterPrint": "printFormatter",
+            "headerSort": false,
+            "formatter": "wj-profile-photo-stacked"
+        }
+    ],
+    "columnOptions": null,
+    "filters": []
+}

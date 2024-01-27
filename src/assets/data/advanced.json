@@ -1,0 +1,616 @@
+{
+    "lastPage": 5,
+    "totalItems": 45,
+    "columns": [{
+        "field": "_actions_",
+        "formatter": "wj-actions-modal",
+        "width": 40,
+        "maxWidth": 40,
+        "filterable": false,
+        "headerSort": false,
+        "resizable": false,
+        "formatterParams": [{
+            "condition": null,
+            "size": "x-large",
+            "action": "wj-modal-open",
+            "attributes": "task-id=\"{id}\"",
+            "footerHide": "true",
+            "text": "",
+            "type": "EDIT",
+            "title": "Upraviť",
+            "url": "/private/dsk/task/list/{id}"
+        }]
+    }, {
+        "title": "Názov",
+        "field": "name",
+        "filterField": "name",
+        "sortField": "name",
+        "formatter": "wj-title-with-description",
+        "headerHozAlign": "left",
+        "formatterPrint": "printFormatter",
+        "formatterParams": {
+            "titleType": "modal",
+            "id": "{id}",
+            "printField": "",
+            "titleHref": "/private/dsk/task/list/{id}"
+        },
+        "headerFilterFuncParams": {
+            "type": "string"
+        },
+        "filterable": false,
+        "resizable": "header",
+        "vertAlign": "middle",
+        "hozAlign": "left",
+        "headerSort": false,
+        "titleFormatter": "wj-header-advanced"
+    }, {
+        "title": "Typ požiadavky",
+        "field": "demand",
+        "filterField": "demand.id",
+        "sortField": "demand.id",
+        "formatter": "wj-fontawesome",
+        "headerHozAlign": "left",
+        "formatterPrint": "printFormatter",
+        "formatterParams": {
+            "text": "{name}",
+            "printField": "name"
+        },
+        "headerFilterFuncParams": {
+            "type": "option"
+        },
+        "filterable": true,
+        "resizable": "header",
+        "vertAlign": "middle",
+        "hozAlign": "left",
+        "headerSort": true
+    }, {
+        "title": "Priorita",
+        "field": "priority",
+        "filterField": "priority.id",
+        "sortField": "priority.id",
+        "formatter": "wj-colored-dot",
+        "headerHozAlign": "left",
+        "formatterPrint": "printFormatter",
+        "headerFilterFuncParams": {
+            "type": "option"
+        },
+        "filterable": true,
+        "resizable": "header",
+        "vertAlign": "middle",
+        "hozAlign": "left",
+        "headerSort": true,
+        "formatterParams": {
+            "printField": "name"
+        }
+    }, {
+        "title": "Stav",
+        "field": "status",
+        "filterField": "status.id",
+        "sortField": "status.id",
+        "formatter": "wj-badge",
+        "headerHozAlign": "left",
+        "formatterPrint": "printFormatter",
+        "formatterParams": {
+            "printField": "name",
+            "colorPrefix": "label-"
+        },
+        "headerFilterFuncParams": {
+            "type": "option"
+        },
+        "filterable": true,
+        "resizable": "header",
+        "vertAlign": "middle",
+        "hozAlign": "left",
+        "headerSort": true
+    }, {
+        "title": "Riešiteľ",
+        "field": "solver",
+        "filterField": "solver.fullName",
+        "sortField": "solver.firstName",
+        "formatter": "wj-profile-photo",
+        "headerHozAlign": "left",
+        "formatterPrint": "printFormatter",
+        "formatterParams": {
+            "size": "sm",
+            "name": "{fullName}",
+            "printField": "fullName"
+        },
+        "headerFilterFuncParams": {
+            "type": "string"
+        },
+        "filterable": true,
+        "resizable": "header",
+        "vertAlign": "middle",
+        "hozAlign": "left",
+        "headerSort": true
+    }, {
+        "title": "Zadávateľ",
+        "field": "author",
+        "filterField": "author.fullName",
+        "sortField": "author.firstName",
+        "formatter": "wj-profile-photo",
+        "headerHozAlign": "left",
+        "formatterPrint": "printFormatter",
+        "formatterParams": {
+            "size": "sm",
+            "name": "{fullName}",
+            "printField": "fullName"
+        },
+        "headerFilterFuncParams": {
+            "type": "string"
+        },
+        "filterable": true,
+        "resizable": "header",
+        "vertAlign": "middle",
+        "hozAlign": "left",
+        "headerSort": true
+    }, {
+        "title": "Začiatok",
+        "field": "startDate",
+        "filterField": "startDate",
+        "sortField": "startDate",
+        "formatter": "wj-date",
+        "headerHozAlign": "left",
+        "formatterPrint": "printFormatter",
+        "headerFilterFuncParams": {
+            "type": "date-range"
+        },
+        "filterable": true,
+        "resizable": "header",
+        "sorter": "date",
+        "vertAlign": "middle",
+        "hozAlign": "left",
+        "headerSort": true,
+        "formatterParams": {
+            "printField": ""
+        }
+    }, {
+        "title": "Koniec",
+        "field": "endDate",
+        "filterField": "endDate",
+        "sortField": "endDate",
+        "formatter": "wj-date",
+        "headerHozAlign": "left",
+        "formatterPrint": "printFormatter",
+        "headerFilterFuncParams": {
+            "type": "date-range"
+        },
+        "filterable": true,
+        "resizable": "header",
+        "sorter": "date",
+        "vertAlign": "middle",
+        "hozAlign": "left",
+        "headerSort": true,
+        "formatterParams": {
+            "printField": ""
+        }
+    }, {
+        "title": "Vytvorené",
+        "field": "createdDate",
+        "filterField": "created",
+        "sortField": "created",
+        "formatter": "wj-datetime",
+        "headerHozAlign": "left",
+        "formatterPrint": "printFormatter",
+        "headerFilterFuncParams": {
+            "type": "date"
+        },
+        "filterable": true,
+        "resizable": "header",
+        "sorter": "date",
+        "vertAlign": "middle",
+        "hozAlign": "left",
+        "headerSort": true,
+        "formatterParams": {
+            "printField": ""
+        }
+    }],
+    "columnOptions": {
+        "priority": [{
+            "id": 1,
+            "name": "Nízka"
+        }, {
+            "id": 2,
+            "name": "Stredná"
+        }, {
+            "id": 4,
+            "name": "Vysoká"
+        }, {
+            "id": 5,
+            "name": "Kritická"
+        }],
+        "demand": [{
+            "id": 1,
+            "name": "ZMENA"
+        }, {
+            "id": 2,
+            "name": "KONZULTÁCIA"
+        }, {
+            "id": 4,
+            "name": "CHYBA"
+        }, {
+            "id": 5,
+            "name": "PODPORA"
+        }],
+        "status": [{
+            "id": 8,
+            "name": "Čaká sa na podklady"
+        }, {
+            "id": 3,
+            "name": "Rieši sa"
+        }, {
+            "id": 5,
+            "name": "Vyriešený"
+        }, {
+            "id": 9,
+            "name": "Kontrola klientom"
+        }, {
+            "id": 1,
+            "name": "Nový"
+        }, {
+            "id": 4,
+            "name": "Kontrola"
+        }, {
+            "id": 10,
+            "name": "Backlog"
+        }]
+    },
+    "filters": [{
+        "id": 301862,
+        "filter": "W1t7InRpdGxlIjoiVHlwIHBvxb5pYWRhdmt5IiwiZmllbGQiOiJkZW1hbmQuaWQiLCJ0eXBlIjoiZXEiLCJ2YWx1ZSI6WyI0Il0sImlucHV0VHlwZSI6Ik9QVElPTiIsIm9wdGlvbiI6IldIRVJFIiwidGV4dCI6IkNIWUJBIn0seyJ0aXRsZSI6IlR5cCBwb8W+aWFkYXZreSIsImZpZWxkIjoiZGVtYW5kLmlkIiwidHlwZSI6ImVxIiwidmFsdWUiOlsiMSJdLCJpbnB1dFR5cGUiOiJPUFRJT04iLCJvcHRpb24iOiJPUiIsInRleHQiOiJaTUVOQSJ9XSx7InRpdGxlIjoiU3RhdiIsImZpZWxkIjoic3RhdHVzLmlkIiwidHlwZSI6ImVxIiwidmFsdWUiOlsiMTAiXSwiaW5wdXRUeXBlIjoiT1BUSU9OIiwib3B0aW9uIjoiQU5EIiwidGV4dCI6IkJhY2tsb2cifSx7InRpdGxlIjoiTsOhem92IiwiZmllbGQiOiJuYW1lIiwidHlwZSI6Imxpa2UiLCJ2YWx1ZSI6WyJ0ZXN0Il0sImlucHV0VHlwZSI6IlNUUklORyIsIm9wdGlvbiI6IkFORCIsInRleHQiOiJ0ZXN0In1d",
+        "url": "/private/rest/dsk/project/1/tasks/list_tab",
+        "sort": "",
+        "tab": "Test 1"
+    }, {
+        "id": 302762,
+        "filter": "W3sidGl0bGUiOiJTdGF2IiwiZmllbGQiOiJzdGF0dXMuaWQiLCJ0eXBlIjoibmVxIiwidmFsdWUiOlsiMyJdLCJpbnB1dFR5cGUiOiJPUFRJT04iLCJvcHRpb24iOiJXSEVSRSIsInRleHQiOiJSaWXFoWkgc2EifSx7InRpdGxlIjoiU3RhdiIsImZpZWxkIjoic3RhdHVzLmlkIiwidHlwZSI6Im5lcSIsInZhbHVlIjpbIjEiXSwiaW5wdXRUeXBlIjoiT1BUSU9OIiwib3B0aW9uIjoiQU5EIiwidGV4dCI6Ik5vdsO9In1d",
+        "url": "/private/rest/dsk/project/1/tasks/list_tab",
+        "sort": "",
+        "tab": "HJHJDSHJ LON"
+    }],
+    "data": [{
+        "id": 175,
+        "name": "jdguyag",
+        "demand": {
+            "id": 4,
+            "name": "CHYBA",
+            "icon": "f76c"
+        },
+        "priority": {
+            "id": 1,
+            "name": "Nízka",
+            "color": "springgreen"
+        },
+        "status": {
+            "id": 1,
+            "name": "Nový",
+            "color": "primary"
+        },
+        "solver": null,
+        "author": {
+            "id": 851,
+            "title": "Bc.",
+            "firstName": "Lukáš",
+            "lastName": "Ondrejček",
+            "fullName": "Bc. Lukáš Ondrejček",
+            "photo": "/images/gallery/user/lukas.ondrejcek@interway.sk.png",
+            "email": "lukas.ondrejcek@interway.sk"
+        },
+        "startDate": null,
+        "endDate": null,
+        "createdDate": 1681818156000,
+        "parentId": null
+    }, {
+        "id": 129,
+        "name": "nieco si tu zadam RHR testing fgd",
+        "demand": {
+            "id": 4,
+            "name": "CHYBA",
+            "icon": "f76c"
+        },
+        "priority": {
+            "id": 4,
+            "name": "Vysoká",
+            "color": "orange"
+        },
+        "status": {
+            "id": 5,
+            "name": "Vyriešený",
+            "color": "danger"
+        },
+        "solver": {
+            "id": 2318,
+            "title": "",
+            "firstName": "Juraj",
+            "lastName": "Project Manager",
+            "fullName": "Juraj Project Manager",
+            "photo": "/images/gallery/user/juraj.projekt.manager@interway.sk.png",
+            "email": "juraj.projekt.manager@interway.sk"
+        },
+        "author": {
+            "id": 2224,
+            "title": "Mgr.",
+            "firstName": "Tatiana",
+            "lastName": "Marcinková",
+            "fullName": "Mgr. Tatiana Marcinková",
+            "photo": "/images/gallery/user/tatiana.marcinkova@interway.sk.png",
+            "email": "tatiana.marcinkova@interway.sk"
+        },
+        "startDate": 1671620400000,
+        "endDate": 1671706800000,
+        "createdDate": 1669970529000,
+        "parentId": null
+    }, {
+        "id": 128,
+        "name": "Sed diam nonumy eirmod tempor",
+        "demand": {
+            "id": 4,
+            "name": "CHYBA",
+            "icon": "f76c"
+        },
+        "priority": {
+            "id": 2,
+            "name": "Stredná",
+            "color": "complete"
+        },
+        "status": {
+            "id": 10,
+            "name": "Backlog",
+            "color": "dark"
+        },
+        "solver": null,
+        "author": {
+            "id": 851,
+            "title": "Bc.",
+            "firstName": "Lukáš",
+            "lastName": "Ondrejček",
+            "fullName": "Bc. Lukáš Ondrejček",
+            "photo": "/images/gallery/user/lukas.ondrejcek@interway.sk.png",
+            "email": "lukas.ondrejcek@interway.sk"
+        },
+        "startDate": null,
+        "endDate": null,
+        "createdDate": 1669962666000,
+        "parentId": null
+    }, {
+        "id": 127,
+        "name": "At vero eos et accusam",
+        "demand": {
+            "id": 4,
+            "name": "CHYBA",
+            "icon": "f76c"
+        },
+        "priority": {
+            "id": 2,
+            "name": "Stredná",
+            "color": "complete"
+        },
+        "status": {
+            "id": 1,
+            "name": "Nový",
+            "color": "primary"
+        },
+        "solver": null,
+        "author": {
+            "id": 851,
+            "title": "Bc.",
+            "firstName": "Lukáš",
+            "lastName": "Ondrejček",
+            "fullName": "Bc. Lukáš Ondrejček",
+            "photo": "/images/gallery/user/lukas.ondrejcek@interway.sk.png",
+            "email": "lukas.ondrejcek@interway.sk"
+        },
+        "startDate": null,
+        "endDate": null,
+        "createdDate": 1669962631000,
+        "parentId": null
+    }, {
+        "id": 64,
+        "name": "RHR test refreshu test",
+        "demand": {
+            "id": 2,
+            "name": "KONZULTÁCIA",
+            "icon": "f086"
+        },
+        "priority": {
+            "id": 1,
+            "name": "Nízka",
+            "color": "springgreen"
+        },
+        "status": {
+            "id": 1,
+            "name": "Nový",
+            "color": "primary"
+        },
+        "solver": null,
+        "author": {
+            "id": 851,
+            "title": "Bc.",
+            "firstName": "Lukáš",
+            "lastName": "Ondrejček",
+            "fullName": "Bc. Lukáš Ondrejček",
+            "photo": "/images/gallery/user/lukas.ondrejcek@interway.sk.png",
+            "email": "lukas.ondrejcek@interway.sk"
+        },
+        "startDate": null,
+        "endDate": null,
+        "createdDate": 1668772121000,
+        "parentId": null
+    }, {
+        "id": 60,
+        "name": "Uloha vytvara Sona - klientka",
+        "demand": {
+            "id": 1,
+            "name": "ZMENA",
+            "icon": "f021"
+        },
+        "priority": {
+            "id": 2,
+            "name": "Stredná",
+            "color": "complete"
+        },
+        "status": {
+            "id": 1,
+            "name": "Nový",
+            "color": "primary"
+        },
+        "solver": null,
+        "author": {
+            "id": 2248,
+            "title": "",
+            "firstName": "Sona",
+            "lastName": "Project Manager",
+            "fullName": "Sona Project Manager",
+            "photo": "/images/gallery/user/zamestnanec9.jpg",
+            "email": "sona.project.manager@interway.sk"
+        },
+        "startDate": null,
+        "endDate": null,
+        "createdDate": 1668177850000,
+        "parentId": null
+    }, {
+        "id": 59,
+        "name": "SUPPORT ULOHA RHR test",
+        "demand": {
+            "id": 4,
+            "name": "CHYBA",
+            "icon": "f76c"
+        },
+        "priority": {
+            "id": 1,
+            "name": "Nízka",
+            "color": "springgreen"
+        },
+        "status": {
+            "id": 4,
+            "name": "Kontrola",
+            "color": "success"
+        },
+        "solver": {
+            "id": 851,
+            "title": "Bc.",
+            "firstName": "Lukáš",
+            "lastName": "Ondrejček",
+            "fullName": "Bc. Lukáš Ondrejček",
+            "photo": "/images/gallery/user/lukas.ondrejcek@interway.sk.png",
+            "email": "lukas.ondrejcek@interway.sk"
+        },
+        "author": {
+            "id": 2248,
+            "title": "",
+            "firstName": "Sona",
+            "lastName": "Project Manager",
+            "fullName": "Sona Project Manager",
+            "photo": "/images/gallery/user/zamestnanec9.jpg",
+            "email": "sona.project.manager@interway.sk"
+        },
+        "startDate": 1712743200000,
+        "endDate": 1713952800000,
+        "createdDate": 1668174042000,
+        "parentId": null
+    }, {
+        "id": 58,
+        "name": "RHR testing task",
+        "demand": {
+            "id": 1,
+            "name": "ZMENA",
+            "icon": "f021"
+        },
+        "priority": {
+            "id": 2,
+            "name": "Stredná",
+            "color": "complete"
+        },
+        "status": {
+            "id": 10,
+            "name": "Backlog",
+            "color": "dark"
+        },
+        "solver": null,
+        "author": {
+            "id": 851,
+            "title": "Bc.",
+            "firstName": "Lukáš",
+            "lastName": "Ondrejček",
+            "fullName": "Bc. Lukáš Ondrejček",
+            "photo": "/images/gallery/user/lukas.ondrejcek@interway.sk.png",
+            "email": "lukas.ondrejcek@interway.sk"
+        },
+        "startDate": null,
+        "endDate": null,
+        "createdDate": 1668162810000,
+        "parentId": null
+    }, {
+        "id": 57,
+        "name": "test ql editora 4 - dlhy text",
+        "demand": {
+            "id": 1,
+            "name": "ZMENA",
+            "icon": "f021"
+        },
+        "priority": {
+            "id": 4,
+            "name": "Vysoká",
+            "color": "orange"
+        },
+        "status": {
+            "id": 4,
+            "name": "Kontrola",
+            "color": "success"
+        },
+        "solver": {
+            "id": 2588,
+            "title": "Ing.",
+            "firstName": "Dominik",
+            "lastName": "Dudek",
+            "fullName": "Ing. Dominik Dudek",
+            "photo": "/images/gallery/user/dominik.dudek@interway.sk.png",
+            "email": "dominik.dudek@interway.sk"
+        },
+        "author": {
+            "id": 2552,
+            "title": "Ing.",
+            "firstName": "Tester",
+            "lastName": "Playwright",
+            "fullName": "Ing. Tester Playwright",
+            "photo": "/images/gallery/user/web.spam@interway.sk.png",
+            "email": "web.spam@interway.sk"
+        },
+        "startDate": 1730718000000,
+        "endDate": 1733482800000,
+        "createdDate": 1668093505000,
+        "parentId": null
+    }, {
+        "id": 56,
+        "name": "test ql editor 3 ",
+        "demand": {
+            "id": 1,
+            "name": "ZMENA",
+            "icon": "f021"
+        },
+        "priority": {
+            "id": 4,
+            "name": "Vysoká",
+            "color": "orange"
+        },
+        "status": {
+            "id": 10,
+            "name": "Backlog",
+            "color": "dark"
+        },
+        "solver": null,
+        "author": {
+            "id": 2552,
+            "title": "Ing.",
+            "firstName": "Tester",
+            "lastName": "Playwright",
+            "fullName": "Ing. Tester Playwright",
+            "photo": "/images/gallery/user/web.spam@interway.sk.png",
+            "email": "web.spam@interway.sk"
+        },
+        "startDate": null,
+        "endDate": null,
+        "createdDate": 1668093335000,
+        "parentId": null
+    }]
+}
